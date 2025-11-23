@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaodong Li | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', 
+                        accent: '#2563eb',  
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 简单的激活状态样式 */
+        .lang-btn.active {
+            color: #2563eb;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-accent selection:text-white">
+
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="text-xl font-bold text-primary" id="nav-name">Yaodong Li</div>
+                <div class="flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <div class="flex space-x-2 border-r border-slate-300 pr-4 mr-2">
+                        <button onclick="setLanguage('en')" class="lang-btn hover:text-accent transition active" id="btn-en">EN</button>
+                        <span>/</span>
+                        <button onclick="setLanguage('zh')" class="lang-btn hover:text-accent transition" id="btn-zh">中</button>
+                        <span>/</span>
+                        <button onclick="setLanguage('jp')" class="lang-btn hover:text-accent transition" id="btn-jp">日</button>
+                    </div>
+
+                    <a href="#about" class="hover:text-accent transition hidden sm:block" id="nav-about">About</a>
+                    <a href="#news" class="hover:text-accent transition hidden sm:block" id="nav-news">News</a>
+                    <a href="#research" class="hover:text-accent transition hidden sm:block" id="nav-research">Research</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+        
+        <section id="about" class="mb-16">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-slate-200 overflow-hidden flex-shrink-0 border-4 border-white shadow-lg ring-1 ring-slate-100">
+                    <img src="avatar.jpg" alt="Yaodong Li" class="w-full h-full object-cover object-top">
+                </div>
+                
+                <div>
+                    <h1 class="text-4xl font-bold text-primary mb-2" id="hero-name">李耀东 (Yaodong Li)</h1>
+                    <p class="text-lg text-slate-600 mb-4" id="hero-title">
+                        Incoming Master's Student @ <span class="font-semibold text-primary">HUST</span><br>
+                        B.Eng. in CS @ <span class="font-semibold text-primary">Shanghai University</span>
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6 text-justify" id="hero-bio">
+                        I am a first-year Master's student ("Year 0") majoring in Computer Science. My research interests lie at the intersection of Large Language Models (LLM), Vision-Language Models, and Mixture of Experts (MoE) architectures.
+                    </p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="mailto:177-1707-5905@10000@shu.edu.cn" class="text-slate-500 hover:text-accent text-xl transition transform hover:scale-110"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/Lydddddddd" target="_blank" class="text-slate-500 hover:text-accent text-xl transition transform hover:scale-110"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="mb-16">
+            <h2 class="text-2xl font-bold text-primary border-b border-slate-200 pb-2 mb-6" id="header-news">Recent Updates</h2>
+            <ul class="space-y-3">
+                <li class="flex gap-4 text-sm">
+                    <span class="font-mono text-slate-400 shrink-0" id="news-date-1">Nov 2025</span>
+                    <span id="news-text-1">Started self-studying <strong>CS336: Language Modeling Systems</strong>.</span>
+                </li>
+                <li class="flex gap-4 text-sm">
+                    <span class="font-mono text-slate-400 shrink-0" id="news-date-2">Sep 2025</span>
+                    <span id="news-text-2">Admitted to <strong>Huazhong University of Science and Technology</strong> (Waived from admission test).</span>
+                </li>
+                <li class="flex gap-4 text-sm">
+                    <span class="font-mono text-slate-400 shrink-0" id="news-date-3">Aug 2025</span>
+                    <span id="news-text-3">Interned at <strong>Geely Auto Research Institute</strong>, working on AUTOSAR LLM Agents.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="research" class="mb-16">
+            <h2 class="text-2xl font-bold text-primary border-b border-slate-200 pb-2 mb-6" id="header-research">Selected Research</h2>
+            
+            <div class="space-y-8">
+                <div class="group">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-lg font-bold text-slate-800 group-hover:text-accent transition" id="proj-1-title">Lightweight High-Precision USV Object Detection</h3>
+                        <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">EI Conference</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-2 italic" id="proj-1-role">First Author | Accepted by EI Conference</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-2" id="proj-1-desc">
+                        Proposed SNC-YOLOv5n and WIoU-YOLOv9t algorithms for Unmanned Surface Vehicles. Optimized complexity (3.8 GFLOPs) while maintaining high accuracy (mAP@50-95: 56.1%).
+                    </p>
+                </div>
+
+                <div class="group">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-lg font-bold text-slate-800 group-hover:text-accent transition" id="proj-2-title">Fake Image Detection based on Learned Noise Patterns</h3>
+                        <span class="text-xs font-semibold bg-green-100 text-green-800 px-2 py-1 rounded" id="proj-2-badge">National Innovation Project</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-2 italic" id="proj-2-role">Project Leader | National Level Project</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-2" id="proj-2-desc">
+                        Addressed deepfake detection (GauGAN, StyleGAN). Implemented CycleISP to extract noise patterns and analyzed frequency domain features. Achieved 75.59% accuracy.
+                    </p>
+                </div>
+
+                <div class="group">
+                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-accent transition" id="proj-3-title">Enterprise Knowledge Base & Agent for Intelligent Driving</h3>
+                    <p class="text-sm text-slate-500 mb-2 italic" id="proj-3-role">Internship @ Geely Auto Research Institute</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-2" id="proj-3-desc">
+                        Built an enterprise-level RAG system for AUTOSAR domain knowledge. Designed intelligent Agent workflows to facilitate efficient knowledge retrieval and reasoning.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="honors" class="mb-16">
+            <h2 class="text-2xl font-bold text-primary border-b border-slate-200 pb-2 mb-6" id="header-honors">Honors & Awards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-trophy text-yellow-500 mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-slate-800" id="honor-1-title">1st Prize, National Finals</p>
+                        <p class="text-xs text-slate-500" id="honor-1-desc">Lanqiao Cup Software Competition</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-medal text-slate-400 mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-slate-800" id="honor-2-title">Meritorious Winner (M Prize)</p>
+                        <p class="text-xs text-slate-500">MCM/ICM Modeling Contest</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-award text-accent mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-slate-800" id="honor-3-title">Silver Award</p>
+                        <p class="text-xs text-slate-500" id="honor-3-desc">Baidu Star Programming Contest</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-graduation-cap text-slate-700 mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-slate-800" id="honor-4-title">Academic Excellence Scholarship</p>
+                        <p class="text-xs text-slate-500" id="honor-4-desc">Shanghai University (Top 10%)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-slate-400 text-sm mt-20">
+            <p>&copy; 2025 Yaodong Li. <span id="footer-text">Built with Tailwind CSS.</span></p>
+        </footer>
+
+    </main>
+
+    <script>
+        // 翻译数据字典
+        const translations = {
+            en: {
+                nav_about: "About",
+                nav_news: "News",
+                nav_research: "Research",
+                hero_name: "Yaodong Li",
+                hero_title: "Incoming Master's Student @ <span class='font-semibold text-primary'>HUST</span><br>B.Eng. in CS @ <span class='font-semibold text-primary'>Shanghai University</span>",
+                hero_bio: "I am a first-year Master's student (\"Year 0\") majoring in Computer Science. My research interests lie at the intersection of Large Language Models (LLM), Vision-Language Models, and Mixture of Experts (MoE) architectures.",
+                header_news: "Recent Updates",
+                news_date_1: "Nov 2025",
+                news_text_1: "Started self-studying <strong>CS336: Language Modeling Systems</strong>.",
+                news_date_2: "Sep 2025",
+                news_text_2: "Admitted to <strong>Huazhong University of Science and Technology</strong> (Waived from admission test).",
+                news_date_3: "Aug 2025",
+                news_text_3: "Interned at <strong>Geely Auto Research Institute</strong>, working on AUTOSAR LLM Agents.",
+                header_research: "Selected Research",
+                proj_1_title: "Lightweight High-Precision USV Object Detection",
+                proj_1_role: "First Author | Accepted by EI Conference",
+                proj_1_desc: "Proposed SNC-YOLOv5n and WIoU-YOLOv9t algorithms for Unmanned Surface Vehicles. Optimized complexity (3.8 GFLOPs) while maintaining high accuracy (mAP@50-95: 56.1%).",
+                proj_2_title: "Fake Image Detection based on Learned Noise Patterns",
+                proj_2_badge: "National Innovation Project",
+                proj_2_role: "Project Leader | National Level Project",
+                proj_2_desc: "Addressed deepfake detection (GauGAN, StyleGAN). Implemented CycleISP to extract noise patterns and analyzed frequency domain features using DFT.",
+                proj_3_title: "Enterprise Knowledge Base & Agent for Intelligent Driving",
+                proj_3_role: "Internship @ Geely Auto Research Institute",
+                proj_3_desc: "Built an enterprise-level RAG system for AUTOSAR domain knowledge. Designed intelligent Agent workflows to facilitate efficient knowledge retrieval and reasoning.",
+                header_honors: "Honors & Awards",
+                honor_1_title: "1st Prize, National Finals",
+                honor_1_desc: "Lanqiao Cup Software Competition",
+                honor_2_title: "Meritorious Winner (M Prize)",
+                honor_3_title: "Silver Award",
+                honor_3_desc: "Baidu Star Programming Contest (Shanghai)",
+                honor_4_title: "Academic Excellence Scholarship",
+                honor_4_desc: "Shanghai University (Top 10%)",
+                footer_text: "Built with Tailwind CSS."
+            },
+            zh: {
+                nav_about: "关于",
+                nav_news: "动态",
+                nav_research: "科研",
+                hero_name: "李耀东",
+                hero_title: "2026级 硕士研究生 @ <span class='font-semibold text-primary'>华中科技大学 (HUST)</span><br>计算机科学与技术学士 @ <span class='font-semibold text-primary'>上海大学 (SHU)</span>",
+                hero_bio: "我目前是一名“研0”学生，即将入读华中科技大学计算机学院。我的研究兴趣集中在 **大语言模型 (LLM)**、**视觉-语言模型 (VLM)** 以及 **混合专家模型 (MoE)** 架构。目前正在自学 CS336 并探索 LLM 系统优化。",
+                header_news: "最新动态",
+                news_date_1: "2025年11月",
+                news_text_1: "开始自学 <strong>CS336: Language Modeling Systems</strong>。",
+                news_date_2: "2025年09月",
+                news_text_2: "保送至 **华中科技大学** 攻读硕士学位。",
+                news_date_3: "2025年08月",
+                news_text_3: "入职 **吉利汽车研究院** (智能驾驶中心) 实习，负责 AUTOSAR 领域大模型与 Agent 研发。",
+                header_research: "精选科研与项目",
+                proj_1_title: "轻量化与高精度的无人水面艇目标检测算法",
+                proj_1_role: "第一作者 | EI 会议收录",
+                proj_1_desc: "提出了 SNC-YOLOv5n 和 WIoU-YOLOv9t 算法。在保持高检测精度 (mAP@50-95: 56.1%) 的同时，显著降低了计算复杂度 (3.8 GFLOPs)。",
+                proj_2_title: "基于习得噪声模式的虚假图像检测算法",
+                proj_2_badge: "国家级大创项目",
+                proj_2_role: "项目负责人 | 国家级大学生创新创业项目",
+                proj_2_desc: "针对 Deepfake (GauGAN, StyleGAN) 检测难题，通过复现 CycleISP 提取噪声模式并利用 DFT 分析频域特征，准确率达到 75.59%。",
+                proj_3_title: "智能驾驶领域企业级知识库与 Agent",
+                proj_3_role: "实习项目 @ 吉利汽车研究院",
+                proj_3_desc: "搭建了面向 AUTOSAR 领域的企业级 RAG 系统。设计了智能 Agent 工作流，实现了知识的高效检索与推理，助力智驾算法研发。",
+                header_honors: "荣誉奖项",
+                honor_1_title: "全国总决赛一等奖",
+                honor_1_desc: "蓝桥杯全国软件和信息技术专业人才大赛 (A组)",
+                honor_2_title: "M奖 (Meritorious Winner)",
+                honor_3_title: "银奖",
+                honor_3_desc: "百度之星程序设计大赛 (上海赛区)",
+                honor_4_title: "学业优秀一等奖学金",
+                honor_4_desc: "上海大学 (专业排名前 10%)",
+                footer_text: "由 Tailwind CSS 驱动"
+            },
+            jp: {
+                nav_about: "私について",
+                nav_news: "ニュース",
+                nav_research: "研究",
+                hero_name: "李 耀東 (Li Yaodong)",
+                hero_title: "修士課程入学予定 @ <span class='font-semibold text-primary'>華中科技大学 (HUST)</span><br>工学学士 (CS) @ <span class='font-semibold text-primary'>上海大学 (SHU)</span>",
+                hero_bio: "現在、計算機科学を専攻する修士課程入学予定の学生（Year 0）です。研究分野は、**大規模言語モデル (LLM)**、**視覚言語モデル (VLM)**、および **Mixture of Experts (MoE)** アーキテクチャです。",
+                header_news: "新着情報",
+                news_date_1: "2025年11月",
+                news_text_1: "<strong>CS336: Language Modeling Systems</strong> の独学を開始しました。",
+                news_date_2: "2025年09月",
+                news_text_2: "<strong>華中科技大学</strong> 大学院への入学が決定しました（推薦入学）。",
+                news_date_3: "2025年08月",
+                news_text_3: "<strong>吉利汽車研究院</strong> (Geely) にてインターンシップを開始。AUTOSAR LLM Agent の開発に従事。",
+                header_research: "研究プロジェクト",
+                proj_1_title: "USVのための軽量かつ高精度な物体検出アルゴリズム",
+                proj_1_role: "筆頭著者 | EI 会議採択",
+                proj_1_desc: "SNC-YOLOv5n および WIoU-YOLOv9t アルゴリズムを提案。計算コストを削減(3.8 GFLOPs)しつつ、高い検出精度(mAP@50-95: 56.1%)を維持しました。",
+                proj_2_title: "学習されたノイズパターンに基づく偽造画像検出",
+                proj_2_badge: "国家級イノベーションプロジェクト",
+                proj_2_role: "プロジェクトリーダー | 国家級大学生創新創業項目",
+                proj_2_desc: "Deepfake (GauGAN, StyleGAN) 検出に取り組みました。CycleISP を用いてノイズパターンを抽出し、周波数領域の特徴を分析しました。",
+                proj_3_title: "自動運転のための企業向けナレッジベースとエージェント",
+                proj_3_role: "インターンシップ @ Geely Auto Research Institute",
+                proj_3_desc: "AUTOSAR ドメイン知識のための RAG システムを構築。知識検索と推論を効率化するインテリジェントエージェントのワークフローを設計しました。",
+                header_honors: "受賞歴",
+                honor_1_title: "全国一等賞",
+                honor_1_desc: "Lanqiao Cup ソフトウェアコンテスト",
+                honor_2_title: "Meritorious Winner (M賞)",
+                honor_3_title: "銀賞",
+                honor_3_desc: "Baidu Star プログラミングコンテスト (上海)",
+                honor_4_title: "学業優秀奨学金 (一等)",
+                honor_4_desc: "上海大学 (上位 10%)",
+                footer_text: "Built with Tailwind CSS."
+            }
+        };
+
+        function setLanguage(lang) {
+            // 1. 更新按钮状态
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            // 2. 更新文本内容
+            const data = translations[lang];
+            // 遍历 ID 并替换内容
+            for (const [id, content] of Object.entries(data)) {
+                const element = document.getElementById(id.replace(/_/g, '-')); // 将 data 中的 nav_about 转换为 id="nav-about"
+                if (element) {
+                    element.innerHTML = content;
+                }
+            }
+        }
+
+        // 默认初始化为英文
+        // setLanguage('en'); 
+    </script>
+</body>
+</html>
