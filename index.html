@@ -24,10 +24,14 @@
         }
     </script>
     <style>
-        /* 简单的激活状态样式 */
         .lang-btn.active {
             color: #2563eb;
             font-weight: bold;
+        }
+        /* 链接悬停效果 */
+        .paper-link:hover {
+            text-decoration: underline;
+            color: #2563eb;
         }
     </style>
 </head>
@@ -65,16 +69,24 @@
                 <div>
                     <h1 class="text-4xl font-bold text-primary mb-2" id="hero-name">李耀东 (Yaodong Li)</h1>
                     <p class="text-lg text-slate-600 mb-4" id="hero-title">
-                        Incoming Master's Student @ <span class="font-semibold text-primary">HUST</span><br>
+                        Incoming Master's Student (Class of 2026) @ <span class="font-semibold text-primary">HUST</span><br>
+                        Major: Computer Science and Technology<br>
                         B.Eng. in CS @ <span class="font-semibold text-primary">Shanghai University</span>
                     </p>
                     <p class="text-slate-600 leading-relaxed mb-6 text-justify" id="hero-bio">
-                        I am a first-year Master's student ("Year 0") majoring in Computer Science. My research interests lie at the intersection of Large Language Models (LLM), Vision-Language Models, and Mixture of Experts (MoE) architectures.
+                        I am a first-year Master's student ("Year 0") majoring in Computer Science and Technology. My research interests lie at the intersection of Large Language Models (LLM), Vision-Language Models, and Mixture of Experts (MoE) architectures.
                     </p>
                     
-                    <div class="flex space-x-4">
-                        <a href="mailto:177-1707-5905@10000@shu.edu.cn" class="text-slate-500 hover:text-accent text-xl transition transform hover:scale-110"><i class="fas fa-envelope"></i></a>
-                        <a href="https://github.com/Lydddddddd" target="_blank" class="text-slate-500 hover:text-accent text-xl transition transform hover:scale-110"><i class="fab fa-github"></i></a>
+                    <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-6 text-slate-500">
+                        <a href="mailto:10000@shu.edu.cn" class="hover:text-accent flex items-center gap-2">
+                            <i class="fas fa-envelope"></i> 10000@shu.edu.cn
+                        </a>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-phone"></i> 177-1707-5905
+                        </div>
+                        <a href="https://github.com/Lydddddddd" target="_blank" class="hover:text-accent flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
                     </div>
                 </div>
             </div>
@@ -89,7 +101,7 @@
                 </li>
                 <li class="flex gap-4 text-sm">
                     <span class="font-mono text-slate-400 shrink-0" id="news-date-2">Sep 2025</span>
-                    <span id="news-text-2">Admitted to <strong>Huazhong University of Science and Technology</strong> (Waived from admission test).</span>
+                    <span id="news-text-2">Admitted to <strong>Huazhong University of Science and Technology</strong> (Class of 2026).</span>
                 </li>
                 <li class="flex gap-4 text-sm">
                     <span class="font-mono text-slate-400 shrink-0" id="news-date-3">Aug 2025</span>
@@ -104,7 +116,11 @@
             <div class="space-y-8">
                 <div class="group">
                     <div class="flex justify-between items-baseline">
-                        <h3 class="text-lg font-bold text-slate-800 group-hover:text-accent transition" id="proj-1-title">Lightweight High-Precision USV Object Detection</h3>
+                        <h3 class="text-lg font-bold text-slate-800 transition" id="proj-1-title">
+                            <a href="https://ieeexplore.ieee.org/document/11102459" target="_blank" class="paper-link">
+                                Lightweight High-Precision USV Object Detection <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                            </a>
+                        </h3>
                         <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">EI Conference</span>
                     </div>
                     <p class="text-sm text-slate-500 mb-2 italic" id="proj-1-role">First Author | Accepted by EI Conference</p>
@@ -120,7 +136,7 @@
                     </div>
                     <p class="text-sm text-slate-500 mb-2 italic" id="proj-2-role">Project Leader | National Level Project</p>
                     <p class="text-slate-600 text-sm leading-relaxed mb-2" id="proj-2-desc">
-                        Addressed deepfake detection (GauGAN, StyleGAN). Implemented CycleISP to extract noise patterns and analyzed frequency domain features. Achieved 75.59% accuracy.
+                        Addressed deepfake detection (GauGAN, StyleGAN). Implemented CycleISP to extract noise patterns and analyzed frequency domain features using DFT.
                     </p>
                 </div>
 
@@ -182,17 +198,19 @@
                 nav_news: "News",
                 nav_research: "Research",
                 hero_name: "Yaodong Li",
-                hero_title: "Incoming Master's Student @ <span class='font-semibold text-primary'>HUST</span><br>B.Eng. in CS @ <span class='font-semibold text-primary'>Shanghai University</span>",
-                hero_bio: "I am a first-year Master's student (\"Year 0\") majoring in Computer Science. My research interests lie at the intersection of Large Language Models (LLM), Vision-Language Models, and Mixture of Experts (MoE) architectures.",
+                // 英文版保留 Computer Science and Technology
+                hero_title: "Incoming Master's Student (Class of 2026) @ <span class='font-semibold text-primary'>HUST</span><br>Major: Computer Science and Technology<br>B.Eng. in CS @ <span class='font-semibold text-primary'>Shanghai University</span>",
+                hero_bio: "I am a first-year Master's student (\"Year 0\") majoring in Computer Science and Technology. My research interests lie at the intersection of <strong>Large Language Models (LLM)</strong>, <strong>Vision-Language Models</strong>, and <strong>Mixture of Experts (MoE)</strong> architectures.",
                 header_news: "Recent Updates",
                 news_date_1: "Nov 2025",
                 news_text_1: "Started self-studying <strong>CS336: Language Modeling Systems</strong>.",
                 news_date_2: "Sep 2025",
-                news_text_2: "Admitted to <strong>Huazhong University of Science and Technology</strong> (Waived from admission test).",
+                news_text_2: "Admitted to <strong>Huazhong University of Science and Technology</strong> (Class of 2026).",
                 news_date_3: "Aug 2025",
                 news_text_3: "Interned at <strong>Geely Auto Research Institute</strong>, working on AUTOSAR LLM Agents.",
                 header_research: "Selected Research",
-                proj_1_title: "Lightweight High-Precision USV Object Detection",
+                // 英文带链接标题
+                proj_1_title: "<a href='https://ieeexplore.ieee.org/document/11102459' target='_blank' class='paper-link'>Lightweight High-Precision USV Object Detection <i class='fas fa-external-link-alt text-xs ml-1 opacity-50'></i></a>",
                 proj_1_role: "First Author | Accepted by EI Conference",
                 proj_1_desc: "Proposed SNC-YOLOv5n and WIoU-YOLOv9t algorithms for Unmanned Surface Vehicles. Optimized complexity (3.8 GFLOPs) while maintaining high accuracy (mAP@50-95: 56.1%).",
                 proj_2_title: "Fake Image Detection based on Learned Noise Patterns",
@@ -217,17 +235,19 @@
                 nav_news: "动态",
                 nav_research: "科研",
                 hero_name: "李耀东",
-                hero_title: "2026级 硕士研究生 @ <span class='font-semibold text-primary'>华中科技大学 (HUST)</span><br>计算机科学与技术学士 @ <span class='font-semibold text-primary'>上海大学 (SHU)</span>",
-                hero_bio: "我目前是一名“研0”学生，即将入读华中科技大学计算机学院。我的研究兴趣集中在 **大语言模型 (LLM)**、**视觉-语言模型 (VLM)** 以及 **混合专家模型 (MoE)** 架构。目前正在自学 CS336 并探索 LLM 系统优化。",
+                hero_title: "2026级 硕士研究生 @ <span class='font-semibold text-primary'>华中科技大学 (HUST)</span><br>专业：计算机科学与技术<br>工学学士 @ <span class='font-semibold text-primary'>上海大学 (SHU)</span>",
+                // 修复：使用 <strong> 替代 **
+                hero_bio: "我目前是一名“研0”学生，即将入读华中科技大学计算机学院。我的研究兴趣集中在 <strong>大语言模型 (LLM)</strong>、<strong>视觉-语言模型 (VLM)</strong> 以及 <strong>混合专家模型 (MoE)</strong> 架构。目前正在自学 CS336 并探索 LLM 系统优化。",
                 header_news: "最新动态",
                 news_date_1: "2025年11月",
                 news_text_1: "开始自学 <strong>CS336: Language Modeling Systems</strong>。",
                 news_date_2: "2025年09月",
-                news_text_2: "保送至 **华中科技大学** 攻读硕士学位。",
+                news_text_2: "保送至 <strong>华中科技大学</strong> 攻读硕士学位 (2026级)。",
                 news_date_3: "2025年08月",
-                news_text_3: "入职 **吉利汽车研究院** (智能驾驶中心) 实习，负责 AUTOSAR 领域大模型与 Agent 研发。",
+                news_text_3: "入职 <strong>吉利汽车研究院</strong> (智能驾驶中心) 实习，负责 AUTOSAR 领域大模型与 Agent 研发。",
                 header_research: "精选科研与项目",
-                proj_1_title: "轻量化与高精度的无人水面艇目标检测算法",
+                // 中文带链接标题
+                proj_1_title: "<a href='https://ieeexplore.ieee.org/document/11102459' target='_blank' class='paper-link'>轻量化与高精度的无人水面艇目标检测算法 <i class='fas fa-external-link-alt text-xs ml-1 opacity-50'></i></a>",
                 proj_1_role: "第一作者 | EI 会议收录",
                 proj_1_desc: "提出了 SNC-YOLOv5n 和 WIoU-YOLOv9t 算法。在保持高检测精度 (mAP@50-95: 56.1%) 的同时，显著降低了计算复杂度 (3.8 GFLOPs)。",
                 proj_2_title: "基于习得噪声模式的虚假图像检测算法",
@@ -252,17 +272,19 @@
                 nav_news: "ニュース",
                 nav_research: "研究",
                 hero_name: "李 耀東 (Li Yaodong)",
-                hero_title: "修士課程入学予定 @ <span class='font-semibold text-primary'>華中科技大学 (HUST)</span><br>工学学士 (CS) @ <span class='font-semibold text-primary'>上海大学 (SHU)</span>",
-                hero_bio: "現在、計算機科学を専攻する修士課程入学予定の学生（Year 0）です。研究分野は、**大規模言語モデル (LLM)**、**視覚言語モデル (VLM)**、および **Mixture of Experts (MoE)** アーキテクチャです。",
+                hero_title: "修士課程入学予定 (2026年度) @ <span class='font-semibold text-primary'>華中科技大学 (HUST)</span><br>専攻：計算機科学と技術<br>工学学士 (CS) @ <span class='font-semibold text-primary'>上海大学 (SHU)</span>",
+                // 修复：使用 <strong> 替代 **
+                hero_bio: "現在、計算機科学と技術を専攻する修士課程入学予定の学生（Year 0）です。研究分野は、<strong>大規模言語モデル (LLM)</strong>、<strong>視覚言語モデル (VLM)</strong>、および <strong>Mixture of Experts (MoE)</strong> アーキテクチャです。",
                 header_news: "新着情報",
                 news_date_1: "2025年11月",
                 news_text_1: "<strong>CS336: Language Modeling Systems</strong> の独学を開始しました。",
                 news_date_2: "2025年09月",
-                news_text_2: "<strong>華中科技大学</strong> 大学院への入学が決定しました（推薦入学）。",
+                news_text_2: "<strong>華中科技大学</strong> 大学院への入学が決定しました（2026年度推薦入学）。",
                 news_date_3: "2025年08月",
                 news_text_3: "<strong>吉利汽車研究院</strong> (Geely) にてインターンシップを開始。AUTOSAR LLM Agent の開発に従事。",
                 header_research: "研究プロジェクト",
-                proj_1_title: "USVのための軽量かつ高精度な物体検出アルゴリズム",
+                // 日文带链接标题
+                proj_1_title: "<a href='https://ieeexplore.ieee.org/document/11102459' target='_blank' class='paper-link'>USVのための軽量かつ高精度な物体検出アルゴリズム <i class='fas fa-external-link-alt text-xs ml-1 opacity-50'></i></a>",
                 proj_1_role: "筆頭著者 | EI 会議採択",
                 proj_1_desc: "SNC-YOLOv5n および WIoU-YOLOv9t アルゴリズムを提案。計算コストを削減(3.8 GFLOPs)しつつ、高い検出精度(mAP@50-95: 56.1%)を維持しました。",
                 proj_2_title: "学習されたノイズパターンに基づく偽造画像検出",
@@ -285,22 +307,19 @@
         };
 
         function setLanguage(lang) {
-            // 1. 更新按钮状态
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`btn-${lang}`).classList.add('active');
 
-            // 2. 更新文本内容
             const data = translations[lang];
-            // 遍历 ID 并替换内容
             for (const [id, content] of Object.entries(data)) {
-                const element = document.getElementById(id.replace(/_/g, '-')); // 将 data 中的 nav_about 转换为 id="nav-about"
+                const element = document.getElementById(id.replace(/_/g, '-'));
                 if (element) {
                     element.innerHTML = content;
                 }
             }
         }
-
-        // 默认初始化为英文
+        
+        // 默认初始化运行一次，确保内容正确显示
         // setLanguage('en'); 
     </script>
 </body>
